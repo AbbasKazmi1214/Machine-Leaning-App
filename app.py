@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report,confusion_matrix,accuracy_score
-from sklearn.datasets import load_boston
+from sklearn.datasets import load_iris
 
 st.set_page_config(page_title="Machine Learning App",
                    layout="wide")
@@ -104,12 +104,12 @@ if uploaded_file is not None:
 else:
     st.info('Awaiting for CSV file to be uploaded.')
     if st.button('Press to use Example Dataset'):
-        boston = load_boston()
-        X = pd.DataFrame(boston.data,columns = boston.feature_names)
-        y= pd.Series(boston.target,name='response')
+        iris = load_iris()
+        X = pd.DataFrame(iris.data,columns = iris.feature_names)
+        y= pd.Series(iris.target,name='response')
         df = pd.concat([X,y],axis=1)
         
-        st.markdown('The Boston housing dataset is used as the example')
+        st.markdown('The Iris dataset is used as the example')
         st.write(df.head(5))
         
         build_model(df)
