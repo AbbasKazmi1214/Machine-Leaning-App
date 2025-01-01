@@ -67,7 +67,7 @@ def build_model(df):
     
 st.write("""
   # The Machine Learning App
-  In this implementation, the *RandomForestClassifier()* function is used in this app for build a regression model using the **Random Forest** algorithm.
+  In this implementation, the *RandomForestClassifier()* function is used in this app for building a classification model using the **Random Forest** algorithm.
 
   Try adjusting the hyperparameters!
   """)
